@@ -5,11 +5,11 @@
 </template>
 
 <script lang="ts">
-import { onMounted } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import firebase from 'firebase/compat'
 import initializeApp = firebase.initializeApp
 
-export default {
+export default defineComponent({
   props: {
     swr: {
       type: ServiceWorkerRegistration,
@@ -34,5 +34,5 @@ export default {
       console.log(app)
     })
   },
-}
+})
 </script>
