@@ -2,7 +2,7 @@
   <div>
     <h2>Firebase integration</h2>
     <p>Device token:</p>
-    <code>{{ deviceToken }}</code>
+    <code style='word-break: break-all; padding: 20px;'>{{ deviceToken }}</code>
   </div>
 </template>
 
