@@ -13,8 +13,8 @@
       Try local push notification
     </button>
 
-        <register-to-push :swr="swr"></register-to-push>
-    <firebase-sub :swr="swr"></firebase-sub>
+    <register-to-push :swr="swr"></register-to-push>
+<!--    <firebase-sub :swr="swr"></firebase-sub>-->
   </div>
 </template>
 

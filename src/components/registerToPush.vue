@@ -6,8 +6,9 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue'
-import firebase from 'firebase/compat'
-import initializeApp = firebase.initializeApp
+import { initializeApp } from 'firebase/app';
+import { getMessaging, getToken } from 'firebase/messaging';
+
 
 export default defineComponent({
   props: {
@@ -31,6 +32,22 @@ export default defineComponent({
       };
 
       const app = initializeApp(firebaseConfig)
+      const messaging = getMessaging(app);
+
+      getToken(messaging, {vapidKey: 'BCbyukXPL6gq6iOa7Zddxf1D73MLsZpX3SE15L5Hcqx-Bh1Iz9g0C6tkBqxG0MEgJAKr-dUIyL8HjtbT4yDBdO4'}).then((currentToken) => {
+        if (currentToken) {
+          // Send the token to your server and update the UI if necessary
+          // ...
+        } else {
+          // Show permission request UI
+          console.log('No registration token available. Request permission to generate one.');
+          // ...
+        }
+      }).catch((err) => {
+        console.log('An error occurred while retrieving token. ', err);
+        // ...
+      });
+
       console.log(app)
     })
   },
