@@ -13,20 +13,20 @@
       Try local push notification
     </button>
 
-    <!--    <register-to-push :swr="swr"></register-to-push>-->
+        <register-to-push :swr="swr"></register-to-push>
     <firebase-sub :swr="swr"></firebase-sub>
   </div>
 </template>
 
 <script lang="ts">
-// import RegisterToPush from './components/registerToPush.vue'
+import RegisterToPush from './components/registerToPush.vue'
 import { onMounted, ref } from 'vue'
 import FirebaseSub from './components/firebaseSub.vue'
 
 export default {
   components: {
     FirebaseSub,
-    // RegisterToPush,
+    RegisterToPush,
   },
 
   setup() {
